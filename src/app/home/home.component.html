@@ -1,0 +1,26 @@
+<section id="homePage" class="vh-100">
+    <div class="home-layout">
+        <div class="container">
+            <div class="home-content">
+                <h3>Food Recipes</h3>
+                <h1>1,000,000 Recipes & more in one place</h1>
+                <div class="home-searchbox">
+                    <input type="text" name="" id="searchBox" #searchBox placeholder="Search over one million recipes...">
+                    <button id="searchBtn" #searchBtn (click)="getFoodType()">
+                        <i class="fas fa-search"></i>Search
+                    </button>
+                </div>
+
+                <div class="home-features">
+                    <h4>You Never Have To Cook Boring Again</h4>
+                    <div class="features">
+                        <div class="feature" *ngFor="let feature of features">
+                            <i [class]="feature.icon"></i>
+                            <p>{{feature.feature}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

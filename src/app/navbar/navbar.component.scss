@@ -1,0 +1,135 @@
+@import "../../assets/SCSS/variables.scss";
+// section style
+nav
+{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 99999999999;
+    .navbar-toggler
+    {
+        outline: none;
+    }
+    .nav-content
+    {
+        padding: 10px 0;
+        display: flex;
+        position: relative;
+        width: 100%;
+        min-height: 55px;
+        .nav-search
+        {
+            width: fit-content;
+            position: relative;
+            left: 20%;
+            input
+            {
+                width: 400px;
+                height: 35px;
+                border: 1px solid crimson;
+                border-radius: 5px;
+                outline: none;
+                padding-left: 12px ;
+                color: crimson;
+                font: {
+                    size: 20px;
+                    weight: 500;
+                    family: sans-serif;
+                };
+                transition: 0.2s all;
+                &:focus
+                {
+                    box-shadow:0px 0px 10px 5px crimson; 
+                }
+                &::placeholder
+                {
+                    padding-left: 7px;
+                    font-size: 16px;
+                }
+            }
+            button
+            {
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                background-color: crimson;
+                border: 1px solid crimson;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                transition: 0.2s all;
+                color: white;
+                padding: 0 12px;
+                font: {
+                    size: 16px;
+                    weight: 500;
+                    family: $fontRoboto;
+                };
+                &:hover
+                {
+                    background-color: white;
+                    color: crimson;
+                }
+                i
+                {
+                    margin-right: 6px;
+                }
+            }
+        }
+        .nav-btn 
+        {
+            position: absolute;
+            right: 0;
+            text-decoration: none;
+            color: crimson;
+            font: {
+                weight: 500;
+                family: $fontRoboto;
+            };
+            border: 2px solid crimson;
+            border-radius: 5px;
+            padding: 5px;
+            transition: 0.2s;
+            text-transform: capitalize;
+
+            i
+            {
+                color: crimson;
+                margin-left: 5px;
+                transition: 0.2s;
+            }
+            &:hover
+            {
+                background-color: crimson;
+                color: white;
+                i
+                {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+// section responsive
+@media screen and (max-width: 991px) {
+    nav
+    {
+        .nav-content
+        {
+            display: block;
+            padding: 20px 0;
+            text-align: center;
+            .nav-search
+            {
+                left: 0;
+                margin: 0 auto 20px;
+            }
+            .nav-btn 
+            {
+                position: relative;
+            }
+        }
+    }
+    
+}
