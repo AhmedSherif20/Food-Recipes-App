@@ -15,11 +15,7 @@ export class RecipesComponent implements OnInit {
     this._NavbarService.show();
     this._GetFoodRecipesService.getFoodRecipes().subscribe((e) => {
       this.foodRecipes = e.recipes
-
-
     })
-
-
   }
 
 }

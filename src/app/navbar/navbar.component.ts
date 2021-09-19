@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { GetFoodRecipesService } from '../get-food-recipes.service';
 import { NavbarService } from '../navbar-search.service';
 
 @Component({
@@ -7,15 +9,19 @@ import { NavbarService } from '../navbar-search.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit, AfterViewInit {
-  @ViewChild("navBTn") navBtn: ElementRef;
-  constructor(public _NavbarService: NavbarService) { }
+  @ViewChild("navSearch") navSearch: ElementRef;
+  @ViewChild("navBtn") navBtn: ElementRef;
+  constructor(public _NavbarService: NavbarService, private _Router: Router, public _GetFoodRecipesService: GetFoodRecipesService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
 
-  }
-  ngAfterViewInit() {
-    console.log(this.navBtn);
+  ngAfterViewInit() { }
 
+  getFoodType() {
+    this._GetFoodRecipesService.getFoodRecipesType(this.navSearch.nativeElement.value);
+    this._Router.navigateByUrl('/recipes');
+
+    this.navSearch.nativeElement.value = ""
   }
 
 }
