@@ -8,13 +8,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ScrollTopBtnComponent } from './scroll-top-btn/scroll-top-btn.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
     RecipesComponent,
-    ScrollTopBtnComponent
+    ScrollTopBtnComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
