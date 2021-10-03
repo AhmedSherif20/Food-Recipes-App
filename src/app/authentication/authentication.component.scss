@@ -1,6 +1,142 @@
+@import "../../assets/SCSS/variables.scss";
 #authenication
 {
     min-height: 100vh;
     background-color: #DDD;
-    padding: 100px;
+    .auth-forms-box
+    {
+        background-color: #FFF;
+        width: 768px;
+        max-width: 100%;
+        min-height: 480px;
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        border-radius: 4px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .form
+        {
+            width: 50%;
+            min-height: 480px;
+            max-height: 100%;
+            padding-top: 48px;
+            .form-title
+            {
+                color: black;
+                font: {
+                    size: 40px;
+                    weight: 700;
+                    family: $fontPoppins;
+                };
+                text-align: center;
+                margin: 32px auto;
+            }
+            .form-input
+            {
+                width: 70%;
+                margin: 18px auto;
+                input
+                {
+                    width: 100%;
+                    height: 45px;
+                    outline: none;
+                    background-color: #eee;
+                    border: 0;
+                    padding-left: 5px;
+                    border-radius: 5px;
+                    &:focus
+                    {
+                        box-shadow:0px 0px 10px 5px crimson; 
+                    }
+                }
+            }
+            .form-btn
+            {
+                // background-color: tomato;
+                margin: 24px auto 18px;
+                width: fit-content;
+                button
+                {
+                    background-color: rgba($color: crimson, $alpha: .9);
+                    border: none;
+                    border-radius: 50px;
+                    outline: none;
+                    padding: 8px 45px;
+                    color: white;
+                    font: {
+                        size: 17px;
+                        weight: 700;
+                    };
+                    transition: 0.3s all;
+                    &:hover
+                    {
+                        background-color: crimson;
+                    }
+                }
+            }
+        }
+        .form-layout
+        {
+            background-color: crimson;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            .layout
+            {
+                margin-top: 100px;
+                text-align: center;
+                padding: 10px;
+                color: white;
+                h2
+                {
+                    font: {
+                        size: 40px;
+                        weight: 500;
+                        family: $fontPoppins
+                    };
+                    margin-bottom: 12px;
+                }
+                p
+                {
+                    font: {
+                        size: 18px;
+                        family: $fontRoboto
+                    };
+                    width: 80%;
+                    margin: 24px auto 32px;
+                }
+                button
+                {
+                    background-color: white;
+                    border: none;
+                    border-radius: 50px;
+                    outline: none;
+                    padding: 8px 45px;
+                    color: Black;
+                    font: {
+                        size: 17px;
+                        weight: 700;
+                    };
+                    transition: 0.3s all;
+                    &:hover
+                    {
+                        background-color: black;
+                        color: white;
+                    }
+                }
+            }
+        }
+        .form-layout.right
+        {
+            right: 50%;
+        }
+
+    }
 }
