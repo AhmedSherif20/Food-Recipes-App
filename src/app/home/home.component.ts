@@ -19,11 +19,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
   ngOnInit(): void { this._NavbarService.hide() }
   ngAfterViewInit() {
   }
-  getFoodType() {
-    this._GetFoodRecipesService.getFoodRecipesType(this.searchBox.nativeElement.value);
-    this._Router.navigateByUrl('/recipes');
+  getFoodType(recipe: any) {
+    this._Router.navigate(['/recipes', recipe]);
 
-    this.searchBox.nativeElement.value = ""
   }
   features: any[] = [
     {

@@ -18,5 +18,8 @@
                 </div>
             </div>
         </div>
+        <div class="alert alert-danger" role="alert" *ngIf="this.error != null">
+            {{this.error}}
+        </div>
     </div>
 </section>

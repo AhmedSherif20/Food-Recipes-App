@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" routerLink="home">
+      <a class="navbar-brand" routerLink="/home">
           <img src="./../../assets/images/logoo.png" alt="">
       </a>
 
@@ -11,8 +11,8 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="nav-content">
             <div class="nav-search" *ngIf="_NavbarService.visible">
-                <input type="text" #navSearch placeholder="Search over 1,000,000 recipes..." (keyup.enter)="getFoodType()">
-                <button #navBtn (click)="getFoodType()">
+                <input type="text" #navSearch placeholder="Search over 1,000,000 recipes..." (keyup.enter)="getFoodType(navSearch.value)">
+                <button #navBtn (click)="getFoodType(navSearch.value)">
                     <i class="fas fa-search"></i>Search
                 </button>
             </div>

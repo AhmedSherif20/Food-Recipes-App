@@ -17,10 +17,8 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() { }
 
-  getFoodType() {
-    this._GetFoodRecipesService.getFoodRecipesType(this.navSearch.nativeElement.value);
-    this._Router.navigateByUrl('/recipes');
-
+  getFoodType(recipe: any) {
+    this._Router.navigate(['/recipes', recipe]);
     this.navSearch.nativeElement.value = ""
   }
 

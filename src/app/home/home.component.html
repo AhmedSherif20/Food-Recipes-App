@@ -5,8 +5,8 @@
                 <h3>Food Recipes</h3>
                 <h1>1,000,000 Recipes & more in one place</h1>
                 <div class="home-searchbox">
-                    <input type="text" name="" id="searchBox" #searchBox placeholder="Search over one million recipes..." (keyup.enter)="getFoodType()">
-                    <button id="searchBtn" #searchBtn (click)="getFoodType()" >
+                    <input type="text" name="" id="searchBox" #searchBox placeholder="Search over one million recipes..." (keyup.enter)="getFoodType(searchBox.value)">
+                    <button id="searchBtn" #searchBtn (click)="getFoodType(searchBox.value)">
                         <i class="fas fa-search"></i>Search
                     </button>
                 </div>

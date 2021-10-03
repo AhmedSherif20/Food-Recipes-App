@@ -6,12 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GetFoodRecipesService {
-  foodType: string;
+
   constructor(private _HttpClient: HttpClient) { }
-  getFoodRecipesType(foodTypeValue: string) {
-    return this.foodType = foodTypeValue
-  }
-  getFoodRecipes(): Observable<any> {
-    return this._HttpClient.get(`https://forkify-api.herokuapp.com/api/search?q=${this.foodType}`)
+  getFoodRecipes(foodType: any): Observable<any> {
+    return this._HttpClient.get(`https://forkify-api.herokuapp.com/api/search?q=${foodType}`)
   }
 }
