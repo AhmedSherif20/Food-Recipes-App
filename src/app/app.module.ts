@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RecipesComponent } from './recipes/recipes.component';
 import { ScrollTopBtnComponent } from './scroll-top-btn/scroll-top-btn.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { AuthenticationComponent } from './authentication/authentication.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

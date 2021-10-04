@@ -3,41 +3,68 @@
     <div class="auth-forms-box">
         <div class="form auth-login-form ">
             <h2 class="form-title">Login</h2>
-            <div class="form-input">
-                <input type="email"  id="loginEmailInput" placeholder="Enter Your Email...">
-            </div>
-            <div class="form-input">
-                <input type="password"  id="loginPasswordInput" placeholder="Enter Your Password...">
-            </div>
-            <div class="form-btn">
-                <button type="sumbit">Login</button>
-            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="loginFormInfo(loginForm)">
+                <div class="form-input">
+                    <input formControlName="email" type="email"  id="loginEmailInput" placeholder="Enter Your Email...">
+                    <div class="alerts text-center" *ngIf="loginForm.get('email')?.errors!= null && loginForm.get('email')?.touched">
+                        <p class="form-text" *ngIf="loginForm.get('email')?.errors?.required">email is requierd !!</p>
+                        <p class="form-text" *ngIf="loginForm.get('email')?.errors?.email">email incorrect !!</p>
+                    </div>
+                </div>
+                <div class="form-input">
+                    <input formControlName="password" type="password"  id="loginPasswordInput" placeholder="Enter Your Password...">
+                    <div class="alerts text-center" *ngIf="loginForm.get('password')?.errors!= null && loginForm.get('password')?.touched">
+                        <p class="form-text" *ngIf="loginForm.get('password')?.errors?.required">Password Incorrect !!</p>
+                    </div>
+                </div>
+                <div class="form-btn">
+                    <button type="sumbit" [disabled]="loginForm.invalid">Login</button>
+                </div>
+            </form>
         </div>
         <div class="form auth-register-form">
             <h2 class="form-title">Register</h2>
-            <div class="form-input">
-                <input type="text"  id="registerNameInput" placeholder="Enter Your Name...">
-            </div>
-            <div class="form-input">
-                <input type="email"  id="registerEmailInput" placeholder="Enter Your Email...">
-            </div>
-            <div class="form-input">
-                <input type="password"  id="registerPasswordInput" placeholder="Enter Your Password...">
-            </div>
-            <div class="form-btn">
-                <button type="sumbit">Register</button>
-            </div>
+            <form [formGroup]="registerForm" (ngSubmit)="registerFormInfo(registerForm)">
+
+                <div class="form-input">
+                    <input formControlName="name" type="text"  id="registerNameInput" placeholder="Enter Your Name...">
+                    <div class="alerts text-center" *ngIf="registerForm.get('name')?.errors!= null && registerForm.get('name')?.touched">
+                        <p class="form-text" *ngIf="registerForm.get('name')?.errors?.minlength">Minimum 3 Letters !!</p>
+                        <p class="form-text" *ngIf="registerForm.get('name')?.errors?.required">Name is required !!</p>
+                    </div>
+                </div>
+
+                <div class="form-input">
+                    <input formControlName="email" type="email"  id="registerEmailInput" placeholder="Enter Your Email...">
+                    <div class="alerts text-center" *ngIf="registerForm.get('email')?.errors!= null && registerForm.get('email')?.touched">
+                        <p class="form-text" *ngIf="registerForm.get('email')?.errors?.email">Email Not Valid !!</p>
+                        <p class="form-text" *ngIf="registerForm.get('email')?.errors?.required">Email is required !!</p>
+                    </div>
+                </div>
+
+                <div class="form-input">
+                    <input formControlName="password" type="password"  id="registerPasswordInput" placeholder="Enter Your Password...">
+                    <div class="alerts text-center" *ngIf="registerForm.get('password')?.errors!= null && registerForm.get('password')?.touched">
+                        <p class="form-text" *ngIf="registerForm.get('password')?.errors?.pattern">password must have one uppercase !!</p>
+                        <p class="form-text" *ngIf="registerForm.get('password')?.errors?.required">password is required !!</p>
+                    </div>
+                </div>
+
+                <div class="form-btn">
+                    <button type="sumbit" [disabled]="registerForm.invalid">Register</button>
+                </div>
+            </form>
         </div>
         <div class="form-layout" #formLayout id="formLayout">
-            <div class="layout go-register">
+            <div class="layout go-register" #goRegisterDiv>
                 <h2>Hello Chef,</h2>
                 <p>Register and save all your favourtie recipes for ever with us</p>
-                <button id="goRegister" #goRegister>Register</button>
+                <button id="goRegister" #goRegister (click)="goRegisterForm()">Register</button>
             </div>
-            <div class="layout go-login d-none">
+            <div class="layout go-login" #goLoginDiv>
                 <h2>Welcome Back,</h2>
-                <p>Login to see your favourite recipes</p>
-                <button id="goLogin" #goLogin>Login</button>
+                <p>Login to see all your favourite recipes</p>
+                <button id="goLogin" #goLogin (click)="goLoginForm()">Login</button>
             </div>
         </div>
     </div>
