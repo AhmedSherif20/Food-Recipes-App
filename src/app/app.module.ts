@@ -10,6 +10,8 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { ScrollTopBtnComponent } from './scroll-top-btn/scroll-top-btn.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { GridViewComponent } from './recipes/grid-view/grid-view.component';
+import { ListViewComponent } from './recipes/list-view/list-view.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     RecipesComponent,
     ScrollTopBtnComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    GridViewComponent,
+    ListViewComponent
   ],
   imports: [
     BrowserModule,

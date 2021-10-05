@@ -11,9 +11,9 @@ export class ScrollTopBtnComponent implements OnInit, AfterViewInit {
   ScrollBtnShowAndHide() {
     let currentScrollPos = window.pageYOffset;
     if (currentScrollPos > 1000) {
-      this._renderer.setStyle(this.scrollToTopBtn.nativeElement, 'opacity', '0.7');
+      this._renderer.setStyle(this.scrollToTopBtn.nativeElement, 'visibility', 'visible');
     } else {
-      this._renderer.setStyle(this.scrollToTopBtn.nativeElement, 'opacity', '0');
+      this._renderer.setStyle(this.scrollToTopBtn.nativeElement, 'visibility', 'hidden');
     }
   }
   constructor(private _renderer: Renderer2) { }

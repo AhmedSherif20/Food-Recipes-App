@@ -15,7 +15,6 @@ export class AuthenticationComponent implements OnInit, AfterViewInit {
   @ViewChild("goRegisterDiv") goRegisterDiv: ElementRef;
   @ViewChild("goLoginDiv") goLoginDiv: ElementRef;
 
-
   constructor(private renderer: Renderer2, private _NavbarService: NavbarService) { }
 
   ngOnInit(): void {

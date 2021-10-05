@@ -1,0 +1,25 @@
+<div class="list-recipes">
+    <div class="recipe"  *ngFor="let recipe of foodRecipes">
+        <div class="recipe-img">
+            <a [href]="recipe.source_url" target="_blank">
+            <img [src]="recipe.image_url" [alt]="recipe.title" class="">
+            </a>
+        </div>
+        <div class="recipe-info">
+            <h4>{{recipe.title}}</h4>
+            <h5>Recipe by/ <a [href]="recipe.publisher_url" target="_blank">{{recipe.publisher}}</a></h5>
+            <p>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </p>
+            <a [href]="recipe.source_url" target="_blank">Get the recipe</a>
+        </div>
+
+    </div>
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="this.error != null">
+    {{this.error}}
+</div>

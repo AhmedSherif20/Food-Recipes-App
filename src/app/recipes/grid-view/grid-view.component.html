@@ -1,0 +1,28 @@
+<div class="grid-recipes">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" *ngFor="let recipe of foodRecipes">
+            <div class="recipe"  target="_blank">
+                <div class="recipe-img">
+                    <a [href]="recipe.source_url" target="_blank">
+                    <img [src]="recipe.image_url" [alt]="recipe.title" class="">
+                    </a>
+                </div>
+                <div class="recipe-info">
+                    <h4>{{recipe.title.split(' ').slice(0,2).join(" ")}}</h4>
+                    <h5>Recipe by/ <a [href]="recipe.publisher_url" target="_blank">{{recipe.publisher}}</a></h5>
+                    <p>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </p>
+                    <a [href]="recipe.source_url" target="_blank">Get the recipe</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="alert alert-danger" role="alert" *ngIf="this.error != null">
+    {{this.error}}
+</div>

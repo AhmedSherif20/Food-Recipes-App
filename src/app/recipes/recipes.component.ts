@@ -13,6 +13,9 @@ export class RecipesComponent implements OnInit {
   foodRecipes: any[] = [];
   foodType: String;
   error: string;
+  gridRecipes: boolean = true;
+  listRecipes: boolean = false;
+
   constructor(private _NavbarService: NavbarService, private _GetFoodRecipesService: GetFoodRecipesService, private _ActivatedRoute: ActivatedRoute, private router: Router) {
     this.foodType = this._ActivatedRoute.snapshot.params.recipe
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
@@ -21,13 +24,16 @@ export class RecipesComponent implements OnInit {
   ngOnInit(): void {
     this._NavbarService.show();
 
-    this._GetFoodRecipesService.getFoodRecipes(this.foodType).subscribe(
-      (e) => { this.foodRecipes = e.recipes },
-      (e) => {
-        this.error = e.error.error;
-        console.log(e);
-      })
 
+
+  }
+  recipesGrid() {
+    this.gridRecipes = true
+    this.listRecipes = false
+  }
+  recipesList() {
+    this.gridRecipes = false
+    this.listRecipes = true
   }
 
 
