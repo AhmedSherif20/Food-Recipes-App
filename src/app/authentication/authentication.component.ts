@@ -14,7 +14,6 @@ export class AuthenticationComponent implements OnInit, AfterViewInit {
   @ViewChild("formLayout") formLayout: ElementRef;
   @ViewChild("goRegisterDiv") goRegisterDiv: ElementRef;
   @ViewChild("goLoginDiv") goLoginDiv: ElementRef;
-
   constructor(private renderer: Renderer2, private _NavbarService: NavbarService) { }
 
   ngOnInit(): void {
@@ -31,9 +30,6 @@ export class AuthenticationComponent implements OnInit, AfterViewInit {
     this.formLayout.nativeElement.classList.remove("right")
     this.goRegisterDiv.nativeElement.style.display = "block"
     this.goLoginDiv.nativeElement.style.display = "none"
-
-
-
   }
   // register form typescript code
   registerForm: FormGroup = new FormGroup({
